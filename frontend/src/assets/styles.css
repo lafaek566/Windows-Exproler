@@ -1,0 +1,88 @@
+/* FinderWindow.css */
+
+/* Window and Header */
+.finder-window {
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.window-header {
+  background-color: #333;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.window-controls .circle {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.finder-layout {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.finder-layout > * {
+  flex: 1;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+.finder-layout > *:last-child {
+  border-right: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  cursor: pointer;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #f3f3f3;
+}
+
+/* Motion Transition */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-spacing: 0;
+  margin-bottom: 1rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.error {
+  color: red;
+}
