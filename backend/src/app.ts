@@ -1,24 +1,23 @@
 import express from "express";
-import bodyParser from "body-parser";
+import cors from "cors"; // Import the CORS package
 import folderRoutes from "./routes/folderRoutes";
-import fileRoutes from "./routes/fileRoutes";
-import cors from "cors";
-import searchRoutes from "./routes/searchRoutes"; // Import searchRoutes
+import subfolderRoutes from "../backup/subfolderRoutes";
+import fileRoutes from "../backup/fileRoutes";
 
 const app = express();
-app.use(cors());
 
-// Middleware
-app.use(bodyParser.json());
+// Enable CORS for all origins (or specify your frontend origin)
+app.use(cors({ origin: "http://localhost:5173" })); // Only allow frontend to access the backend
 
-// Use the routes
-app.use("/api", folderRoutes); // Folder routes
-app.use("/api", fileRoutes); // File routes
-app.use("/api", searchRoutes); // Add search routes
+// Middleware to parse JSON
+app.use(express.json());
+
+// Use routes
+app.use("/api", folderRoutes);
+app.use("/api", subfolderRoutes);
+app.use("/api", fileRoutes);
 
 // Start server
 app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+  console.log("Server running on http://localhost:3000");
 });
-
-export default app;

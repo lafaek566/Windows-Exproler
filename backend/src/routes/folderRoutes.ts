@@ -1,15 +1,8 @@
-import express from "express";
-import {
-  getRootFoldersController,
-  getSubfoldersByParentIdController,
-} from "../controllers/folderController";
+import { Router } from "express";
+import { fetchFolders } from "../controllers/folderController";
 
-const router = express.Router();
+const router = Router();
 
-// Route to get root folders
-router.get("/folders", getRootFoldersController);
-
-// Route to get subfolders by folder ID
-router.get("/folders/:parentId/subfolders", getSubfoldersByParentIdController);
+router.get("/folders", fetchFolders);
 
 export default router;

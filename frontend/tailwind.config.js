@@ -1,7 +1,7 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx,vue}", // Pastikan Vue file termasuk dalam konten
+    "./src/**/*.{vue,js,ts,jsx,tsx}", // Ensure all Vue files are covered
   ],
   theme: {
     extend: {},
